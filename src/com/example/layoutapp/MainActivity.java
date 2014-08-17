@@ -3,6 +3,7 @@ package com.example.layoutapp;
 import android.app.Activity;
 import android.content.Context;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -22,11 +23,19 @@ public class MainActivity extends Activity {
         
         Button button = (Button)findViewById(R.id.button1);
         button.setOnClickListener(new OnClickListener(){
-       @Override
+       
+        	@Override
         public void onClick (View v){
     	   Toast.makeText(getApplicationContext(),"Change Touch",Toast.LENGTH_SHORT).show();
+    	   Toast.makeText(getApplicationContext(),"test",Toast.LENGTH_SHORT).show();
     }
         });
+        
+        Log.v("TAG","verbose");
+		Log.d("TAG","debug");
+        Log.i("TAG","info");
+        Log.w("TAG","warn");
+        Log.e("TAG","error");
     }
 
 
