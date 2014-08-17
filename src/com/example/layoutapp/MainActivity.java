@@ -9,13 +9,19 @@ import android.view.MenuItem;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
+import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
 
 
 public class MainActivity extends Activity {
 	Context context;
 
-    @Override
+	TextView textView ;
+	EditText editText;
+    
+	
+	@Override
     protected void onCreate(Bundle savedInstanceState) {
     	context = this;
         super.onCreate(savedInstanceState);
@@ -36,6 +42,22 @@ public class MainActivity extends Activity {
         Log.i("TAG","info");
         Log.w("TAG","warn");
         Log.e("TAG","error");
+        
+        textView = (TextView)findViewById(R.id.textView2);
+        editText = (EditText)findViewById(R.id.editText1);
+        Button button2 = (Button)findViewById(R.id.button2);
+        
+       
+        button2.setOnClickListener(new OnClickListener(){
+        	@Override
+        	public void onClick(View v){
+        		String text = editText.getText().toString();
+        		textView.setText(text);
+        	}
+        });
+        
+       
+        
     }
 
 
